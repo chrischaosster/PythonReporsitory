@@ -1,0 +1,41 @@
+'''
+Created on Mar 17, 2022
+
+@author: Cristina
+'''
+
+from selenium import webdriver
+#from selenium.webdriver import Chrome
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+
+def solve():
+    import sys
+    from twocaptcha import TwoCaptcha
+    result = None
+
+    sitekey = '7dfYFy8oTNKqALueUX11sH9/f38AAAAAAAAAAVgvpSXNLDv7ntPSA8VL7O+Lx2YCODwXYhpBDqanP6TLMg3oyO0CkIFsIZoGiz0TAOB8KXtHfAresFmh1BTiEVskU5/3PWzuPUXYhSon0E6h+VVTZL/sBuWYCZ990wHM2Qu5MBf9AZ10mibr0R/Y18o4Y4HBJ5t29w5xvnFGeMSRey0pSieXYtdHpCL+K8qCYc2DTTxSuij+bZxZUifJEJKgRdXjaySYNqQ3xBgEIrxcQXcWENEZZCaScXIE+gDlYk4TMDg1ONrXD4drKZPJzCp1G8O9C6x1uQRnnZcPntd+7oAVdVbhHSST0UOkZ6VTZKu4KRz8JxqySA+e1uc0aQs='
+    api_key = 'a15b0816291ec68a7e27e07efd855901'
+    solver = TwoCaptcha(api_key)
+    try:
+        result = solver.recaptcha(
+            sitekey=sitekey,
+            url='https://portal.aws.amazon.com/billing/signup?refid=6b3c2524-1f32-42dc-881e-bada4380a9af&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/identityverification'
+        )
+
+    except Exception as e:
+        sys.exit(e)
+
+    return result
+
+textarea = driver.find_element_by_id('g-recaptcha-response')
+solution = solve()
+code = solution['code']
+driver.execute_script(f"var ele=arguments[0]; ele.innerHTML = '{code}';", textarea)
+time.sleep(1) # waiting is mandatory
+textarea = driver.find_element_by_xpath('//*[@id="login-btn"]/button').click()
+
+
+if __name__ == '__main__':
+    pass

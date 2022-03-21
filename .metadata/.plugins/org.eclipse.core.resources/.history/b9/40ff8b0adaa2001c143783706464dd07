@@ -1,0 +1,13 @@
+'''
+Created on Mar 13, 2022
+
+@author: Cristina
+'''
+from selenium.webdriver import chrome
+
+driver = chrome.webdriver(path='C:\\Users\\Cristina\\Downloads\\chromedriver_win32')
+
+driver.get('https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=categories%23compute&trk=33ffcbe8-beac-4ead-b902-a91ced7f226f&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|Solution|EEM|EN|Text|EU&s_kwcid=AL!4422!3!495118606976!e!!g!!amazon%20cloud&ef_id=Cj0KCQiAybaRBhDtARIsAIEG3kmEDKgPp0YVVMsFG96FN-fNdsB-kK2jS-AktqhIkHvkBVrs47_iv7saApUTEALw_wcB:G:s&s_kwcid=AL!4422!3!495118606976!e!!g!!amazon%20cloud')
+
+if __name__ == '__main__':
+    pass

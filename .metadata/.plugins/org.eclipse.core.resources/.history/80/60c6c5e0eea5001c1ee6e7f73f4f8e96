@@ -1,0 +1,12 @@
+{
+	"issuer": "VISA",
+	"cardNumber": "4916983752772725",
+	"expiryMonth": "02",
+	"expiryYear": "2025",
+	"exp": "02/2025",
+	"cvv": 304,
+	"name": "Mervin Rempel",
+	"address": "15506 Mertz Groves",
+	"country": "Turkmenistan",
+	"zipcode": "30758"
+}
