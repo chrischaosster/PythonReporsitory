@@ -45,6 +45,8 @@ class TestHRM:
         self.driver.find_element(by=By.ID, value = 'my_account').click()
         self.driver.find_element(by=By.ID, value = 'user_login_email').send_keys("cristina.codoban82@gmail.com")
         self.driver.find_element(by=By.ID, value='user_login_continue').click()
+        allure.attach(self.driver.get_screenshot_as_png(),name="LoginFaliedScreenshot",
+                          attachment_type=AttachmentType.PNG)
         self.driver.find_element(by=By.ID, value = 'user_login_password').send_keys("Pitic1982")
         self.driver.find_element(by=By.ID, value='user_login_continue').click()
                     
@@ -54,7 +56,7 @@ class TestHRM:
             self.driver.close()
             assert True
         else:
-            allure.attach(self.driver.get_screenshot_as_png(),name="LoginFaliedScreenshot",
+            allure.attach(self.driver.get_screenshot_as_png(),name="LoginFaliedScreenshot1",
                           attachment_type=AttachmentType.PNG)
             self.driver.close()
             assert False
